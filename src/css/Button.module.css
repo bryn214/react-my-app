@@ -1,0 +1,11 @@
+.create {
+    background-color: #6F8BC1;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 30px;
+}
+
+.create > a {
+    color: white;
+    font-family: 'RIDIBatang';
+}

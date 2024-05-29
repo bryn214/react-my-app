@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'RIDIBatang';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+  body {
+    font-family: 'RIDIBatang';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a {
+    text-decoration: none;
+  }

@@ -1,0 +1,12 @@
+.title {
+    text-align: center;
+}
+
+.title > a {
+    color: black;
+}
+
+.number {
+    color: #6F8BC1;
+    font-weight: bold;
+}
