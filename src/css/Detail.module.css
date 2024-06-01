@@ -29,3 +29,8 @@ h3 {
     align-items: center;
     justify-content: center;
 }
+
+.desc {
+    font-family: RIDIBatang;
+    font-size: 0.8em;
+}

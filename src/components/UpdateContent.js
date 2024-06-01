@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import editor from '../css/Editor.module.css';
 
 class UpdateContent extends Component {
     constructor(props){
@@ -6,7 +7,8 @@ class UpdateContent extends Component {
         this.state = {
             id:this.props.data.id,
             title:this.props.data.title,
-            desc:this.props.data.desc
+            desc:this.props.data.desc,
+            date:this.props.data.date
         }
         this.inputFormHandler = this.inputFormHandler.bind(this);
     }
@@ -15,36 +17,41 @@ class UpdateContent extends Component {
     }
     render() {
       return (
-        <article>
-            <h2>Update</h2>
+        <article className={editor.area}>
+            <h3>수정하기</h3>
             <form action="/create_process" method="post"
                 onSubmit={function(e){
                     e.preventDefault();
                     this.props.onSubmit(
                         this.state.id,
                         this.state.title,
-                        this.state.desc
+                        this.state.desc,
+                        this.state.date
                     );
                 }.bind(this)}
             >
                 <input type="hidden" name="id" value={this.state.id}></input>
+                <input type="hidden" name="date" value={this.state.date}></input>
                 <p>
-                    <input 
-                        type="text" 
+                    <input
+                        className={editor.title}
+                        type="text"
                         name="title" 
-                        placeholder="title"
+                        placeholder="제목"
                         value={this.state.title}
                         onChange={this.inputFormHandler}>
                     </input>
                 </p>
                 <p>
-                    <textarea 
+                    <textarea
+                        className={editor.desc}
                         name="desc" 
-                        placeholder="description"
+                        placeholder="내용"
                         value={this.state.desc}
                         onChange={this.inputFormHandler}>
                     </textarea>
                 </p>
+
                 <p>
                     <input type="submit"></input>
                 </p>

@@ -17,7 +17,7 @@ class ReadContent extends Component {
                     }.bind(this)}>삭제</a>
                 </div>
                 <div className={detail.date}>{this.props.date}</div>
-                <div>{this.props.desc}</div>
+                <div><pre className={detail.desc}>{this.props.desc}</pre></div>
 
             </article>
         );

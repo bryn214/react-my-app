@@ -1,0 +1,41 @@
+input[type=text] {
+    width: 306px;
+    height: 30px;
+    border: 1px solid #B2B2B2;
+    border-radius: 4px;
+    padding-left: 10px;
+    font-family: RIDIBatang;
+}
+
+input[type=submit] {
+    background-color: #6F8BC1;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 150px;
+    font-family: RIDIBatang;
+    color: white;
+}
+
+.desc {
+    border-color: #B2B2B2;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: RIDIBatang;
+    line-height: 20px;
+    width: 300px;
+    height: 400px;
+}
+
+.title:focus {
+    outline-color: #6F8BC1;
+}
+
+.desc:focus {
+    outline-color: #6F8BC1;
+}
+
+.area {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}

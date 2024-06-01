@@ -66,14 +66,11 @@ class App extends Component {
       title={_content.title} desc={_content.desc} date={_content.date}>
       </ReadContent>;
     } else if(this.state.mode === 'create') {
-      _article = <CreateContent onSubmit={function(_title, _desc){
+      _article = <CreateContent onSubmit={function(_title, _desc, _date){
         this.max_content_id = this.max_content_id + 1;
-        // var _contents = this.state.contents.concat(
-        //   {id:this.max_content_id, title:_title, desc:_desc}
-        // )
         var _contents = Array.from(this.state.contents);
         _contents.push(
-          {id:this.max_content_id, title:_title, desc:_desc}
+          {id:this.max_content_id, title:_title, desc:_desc, date:_date}
         );
         this.setState({
           contents:_contents,
@@ -85,12 +82,12 @@ class App extends Component {
     } else if(this.state.mode === 'update') {
       _content = this.getReadContent();
       _article = <UpdateContent data={_content} onSubmit={
-        function(_id, _title, _desc){
+        function(_id, _title, _desc, _date){
         var _contents = Array.from(this.state.contents);
         var i = 0;
         while(i < _contents.length){
           if(_contents[i].id === _id) {
-            _contents[i] = {id:_id, title:_title, desc:_desc};
+            _contents[i] = {id:_id, title:_title, desc:_desc, date:_date};
             break;
           }
           i = i + 1;
