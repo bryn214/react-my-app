@@ -38,6 +38,7 @@ class UpdateContent extends Component {
                         type="text"
                         name="title" 
                         placeholder="제목"
+                        required
                         value={this.state.title}
                         onChange={this.inputFormHandler}>
                     </input>
@@ -47,6 +48,7 @@ class UpdateContent extends Component {
                         className={editor.desc}
                         name="desc" 
                         placeholder="내용"
+                        required
                         value={this.state.desc}
                         onChange={this.inputFormHandler}>
                     </textarea>

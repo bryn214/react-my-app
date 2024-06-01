@@ -22,10 +22,10 @@ class CreateContent extends Component {
                       }.bind(this)}
                 >
                     <p>
-                        <input className={editor.title} type="text" name="title" placeholder="제목"></input>
+                        <input className={editor.title} type="text" name="title" placeholder="제목" required></input>
                     </p>
                     <p>
-                        <textarea className={editor.desc} name="desc" placeholder="내용"></textarea>
+                        <textarea className={editor.desc} name="desc" placeholder="내용" required></textarea>
                     </p>
                     <p>
                         <input type="hidden" name="date" value={formattedFull}></input>
