@@ -3,7 +3,6 @@ import './css/App.css';
 import './css/Button.module.css';
 import TOC from "./components/TOC";
 import Subject from "./components/Subject";
-import Control from "./components/Control";
 import CreateControl from "./components/CreateControl";
 import ReadContent from "./components/ReadContent";
 import CreateContent from "./components/CreateContent";
@@ -37,12 +36,8 @@ class App extends Component {
       }
   }
   getContent(){
-    var _title, _desc = null, _article;
-    if(this.state.mode === 'welcome') {
-      //_title = this.state.welcome.title;
-      //_desc = this.state.welcome.desc;
-      // _article = <ReadContent title={_title} desc={_desc}></ReadContent>;
-    } else if(this.state.mode === 'read') {
+    var _article;
+    if(this.state.mode === 'read') {
       var _content = this.getReadContent();
       _article = <ReadContent onChangeMode={function(_mode) {
         if(_mode === 'delete'){
@@ -112,8 +107,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Subject 
-          title={this.state.subject.title} 
+        <Subject
+          title={this.state.subject.title}
           sub={this.state.subject.sub}
           data={this.state.contents}
           onChangePage={function(){
@@ -132,35 +127,9 @@ class App extends Component {
             mode:'read',
             selected_contend_id:Number(id)
           });
-        }.bind(this)} 
+        }.bind(this)}
         data={this.state.contents}
         ></TOC>
-        <Control onChangeMode={function(_mode) {
-          if(_mode === 'delete'){
-            if(window.confirm('really?')) {
-              var i = 0;
-              var _contents = Array.from(this.state.contents);
-              while(i < this.state.contents.length) {
-                if(_contents[i].id === this.state.selected_contend_id) {
-                  _contents.splice(i, 1);
-                  break;
-                }
-                i = i + 1;
-              }
-              this.setState({
-                mode:'welcome',
-                contents:_contents
-              });
-              alert("deleted!");
-            }
-          } else {
-            this.setState({
-              mode:_mode
-            });
-          }
-        }.bind(this)}
-        >
-        </Control>
         {this.getContent()}
       </div>
     );

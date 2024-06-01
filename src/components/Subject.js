@@ -5,7 +5,7 @@ class Subject extends Component {
     render() {
       var data = this.props.data;
       return (
-        <header>
+        <header className={subject.area}>
               <h1 className={subject.title}><a href="/" onClick={function(e){
                 e.preventDefault();
                 this.props.onChangePage();
